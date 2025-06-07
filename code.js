@@ -53,8 +53,6 @@ function exportStemsPlus()
 		for (i=0; i < channels.numChannels; i++ )
 		{
 
-			
-
 			// get the current channel
 			let channel = channels.getChannel(i);
 
