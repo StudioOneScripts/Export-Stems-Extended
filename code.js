@@ -1,5 +1,5 @@
 ﻿// ------------------------------------------------------------------
-// Export Stems+ 
+// Export Stems Extended
 //
 // This script adds a missing feature to Studio One© by temporarily
 // prefixing channel names during stem export, preserving the song’s
@@ -7,8 +7,7 @@
 // correct track order when importing into other DAWs, and are 
 // automatically removed afterward to leave the session unchanged.
 //
-//
-// Created by: Lawrence Farr
+// Created by: Lawrence F.
 // ------------------------------------------------------------------
 
 function exportStemsPlus()
