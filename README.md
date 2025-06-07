@@ -1,5 +1,5 @@
 
-# EXPORT STEMS EXTENDED
+## EXPORT STEMS EXTENDED
 
 This script adds a missing feature to PreSonus Studio One (c) by 
 temporarily adding numerical prefixes to channel names during stem

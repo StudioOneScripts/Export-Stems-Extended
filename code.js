@@ -10,10 +10,6 @@
 // after the stem export, leaving the session unchanged.
 //
 // Created by: Gray Wolf 
-//
-// ---------------------- Modifications? ----------------------------
-// If you modify this code and share it, please leave the original 
-// credits above and document any modifications here.
 // ------------------------------------------------------------------ 
 
 function exportStemsPlus()
