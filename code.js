@@ -16,7 +16,7 @@ function exportStemsPlus()
 {
 	this.interfaces =  [Host.Interfaces.IEditTask]
 
-	// get the main channel list object
+	// get the main channel list
 	let channels = Host.Objects.getObjectByUrl
 	("object://hostapp/Studio/ActiveEnvironment/MixerConsole")
 	.getChannelList (1)
@@ -40,7 +40,6 @@ function exportStemsPlus()
 		Host.GUI.Commands.interpretCommand("Song","Export Stems")
 
 		// remove the channel prefixes
-		// after the export is done
 		this.removeChannelPrefixes();
 
 		return Host.Results.kResultOk;
@@ -56,7 +55,7 @@ function exportStemsPlus()
 			// get the current channel
 			let channel = channels.getChannel(i);
 	
-			// ignore hidden chord track channel
+			// ignore the Chord Track channel
 			// and any MusicTrack channels
 			if (channel.label == "Chord Track" || 
 				channel.channelType == "MusicTrack")
@@ -79,7 +78,7 @@ function exportStemsPlus()
 			// get the current channel
 			let channel = channels.getChannel(i)
 			
-			// only split and remane if the fourth char
+			// only split and rename if the 4th char
 			// is - to avoid any potential errors
 			if(channel.label[3] == "-")
 			{
