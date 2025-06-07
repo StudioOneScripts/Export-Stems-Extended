@@ -65,7 +65,6 @@ function exportStemsPlus()
 			let prefix = i.toString().padStart(3, '0');
 			let newName = prefix + "-" + channel.label.trim();
 			channel.label = newName;
-			Host.Console.writeLine(channel.label)
 		}
 	}
 
