@@ -9,7 +9,8 @@
 // into other audio workstations. The prefixes are automatically 
 // removed after the stem export, leaving the session unchanged.
 //
-// Created by: Gray Wolf 
+// Created by: Gray Wolf  
+// https://studiooneforum.com/threads/export-stems.947/
 // ------------------------------------------------------------------ 
 
 function exportStemsPlus()
