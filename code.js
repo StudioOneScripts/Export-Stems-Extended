@@ -56,7 +56,7 @@ function exportStemsPlus()
 			let channel = channels.getChannel(i);
 	
 			// ignore the Chord Track channel
-			// and any MusicTrack channels
+			// and also any MusicTrack channels
 			if (channel.label == "Chord Track" || 
 				channel.channelType == "MusicTrack")
 				continue;
