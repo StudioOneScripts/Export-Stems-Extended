@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ClassFactory>
+	<ScriptClass
+		classID="{F01C225D-956F-6C7E-B6E8-AC7E613D9456}"
+		category="EditTask"
+		subCategory="TrackEdit"
+		name="Export Stems+"
+		sourceFile="code.js"
+		functionName="createInstance">
+		<Attribute id="commandCategory" value="External"/>
+		<Attribute id="menuPriority" value="0"/>
+	</ScriptClass>
+</ClassFactory>
