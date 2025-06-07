@@ -1,11 +1,11 @@
 ﻿// ------------------------------------------------------------------
 // Export Stems Extended
 //
-// This script adds a missing feature to Studio One© by temporarily
-// prefixing channel names during stem export, preserving the song’s
-// channel order in the exported files. The prefixes help maintain 
-// correct track order when importing into other DAWs, and are 
-// automatically removed afterward to leave the session unchanged.
+// This script adds a missing feature to PreSonus Studio One (c) by 
+// temporarily prefixing channel names during stem export, preserving
+// the song’s track order in the exported files. The prefixes maintain 
+// correct track order when importing into other DAWs as well, and are 
+// automatically removed after the export to leave the session unchanged.
 //
 // Created by: Lawrence F.
 // ------------------------------------------------------------------
@@ -54,7 +54,7 @@ function exportStemsPlus()
 			let channel = channels.getChannel(i);
 	
 			// skip the hidden chord track channel
-			// and also skio MusicTrack channels
+			// and also skip MusicTrack channels
 			if (channel.label == "Chord Track" || 
 				channel.channelType == "MusicTrack")
 				continue;
@@ -88,7 +88,6 @@ function exportStemsPlus()
 
 // ---------------------------------------------------------------------
 
-// entry function
 function createInstance()
 {
 	return new exportStemsPlus();
