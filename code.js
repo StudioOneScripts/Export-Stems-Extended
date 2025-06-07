@@ -20,7 +20,7 @@ function exportStemsPlus()
 	// get the main channel list
 	let channels = Host.Objects.getObjectByUrl
 	("object://hostapp/Studio/ActiveEnvironment/MixerConsole")
-	.getChannelList (1)
+	.getChannelList(1)
 
 	// --------------------------------------
 
