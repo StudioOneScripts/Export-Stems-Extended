@@ -52,19 +52,22 @@ function exportStemsPlus()
 		// iterate the channel list
 		for (i=0; i < channels.numChannels; i++ )
 		{
+
+			
+
 			// get the current channel
 			let channel = channels.getChannel(i);
-	
-			// ignore the Chord Track channel
-			// and also any MusicTrack channels
-			if (channel.label == "Chord Track" || 
-				channel.channelType == "MusicTrack")
+
+			// ignore the Chord Track and 
+			// any other MusicTrack channels
+			if (channel.channelType == "MusicTrack")
 				continue;
        
 			// numerically prefix the channel name
 			let prefix = (i).toString().padStart(3, '0');
 			let newName = prefix + "-" + channel.label.trim();
 			channel.label = newName;
+			Host.Console.writeLine(channel.label)
 		}
 	}
 
