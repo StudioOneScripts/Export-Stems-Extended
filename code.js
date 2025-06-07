@@ -9,7 +9,7 @@
 // into other workstations. The prefixes are automatically removed 
 // after the stem export, leaving the session unchanged.
 //
-// Created by: Lawrence Farr June 2025
+// Created by: Gray Wolf 
 //
 // ---------------------- Modifications? ----------------------------
 // If you modify this code and share it, please leave the original 
@@ -59,8 +59,8 @@ function exportStemsPlus()
 			// get the current channel
 			let channel = channels.getChannel(i);
 	
-			// skip the hidden chord track channel
-			// and also skip MusicTrack channels
+			// ignore hidden chord track channel
+			// and any MusicTrack channels
 			if (channel.label == "Chord Track" || 
 				channel.channelType == "MusicTrack")
 				continue;
