@@ -14,7 +14,7 @@ function exportStemsPlus()
 {
 	this.interfaces =  [Host.Interfaces.IEditTask]
 
-	// get the main channel list
+	// get the main channel list object
 	let channels = Host.Objects.getObjectByUrl
 	("object://hostapp/Studio/ActiveEnvironment/MixerConsole")
 	.getChannelList (1)
@@ -30,7 +30,7 @@ function exportStemsPlus()
 
 	this.performEdit = function (context)
 	{
-		// prefix the mixer channels
+		// prefix the mixer channel names
 		this.prefixMixerChannels();
 
 		// open the Export Stems dialog which will 
@@ -50,7 +50,7 @@ function exportStemsPlus()
 		// iterate the channel list
 		for (i=0; i < channels.numChannels; i++ )
 		{
-			// get the next mixer channel
+			// get the current channel
 			let channel = channels.getChannel(i);
 	
 			// skip the hidden chord track channel
@@ -64,24 +64,26 @@ function exportStemsPlus()
 			let newName = prefix + "-" + channel.label;
 			channel.label = newName;
 
-			Host.Console.writeLine(channel.label)
 		}
 	}
+
+	// -------------------------------------- 
 
 	this.removeChannelPrefixes = function ()
 	{
 		// iterate the channel listg
 		for (i=0; i < channels.numChannels; i++ )
 		{
-			// get the next channel
+			// get the current channel
 			let channel = channels.getChannel(i)
-
-			// split the label
-			var name = channel.label.split('-');
-
-			// rename the channel with the array item
-			// while trimming away any leftover spaces
-			channel.label = name[name.length-1].trim();
+			
+			// rename the channel if the
+			// third character is a dash
+			if(channel.label[3] == "-")
+			{
+				let name = channel.label.split('-');
+				channel.label = name[name.length-1].trim();
+			}
 		}
 	}
 }
