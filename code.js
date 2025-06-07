@@ -6,8 +6,8 @@
 // export, preserving the song’s channel order in the exported files. 
 // 
 // This also maintains correct track order when importing the files 
-// into other workstations. The prefixes are automatically removed 
-// after the stem export, leaving the session unchanged.
+// into other audio workstations. The prefixes are automatically 
+// removed after the stem export, leaving the session unchanged.
 //
 // Created by: Gray Wolf 
 // ------------------------------------------------------------------ 
