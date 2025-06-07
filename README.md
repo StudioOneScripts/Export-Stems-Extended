@@ -10,4 +10,5 @@ into other workstations. The prefixes are automatically removed
 after the stem export, leaving the session unchanged.
 
 ## Installation
-Download the package and put it in the application \Scripts folder.
+Download the package and put it in the application \Scripts folder.  
+The command will appear in the "External" category in key commands.
