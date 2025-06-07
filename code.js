@@ -78,8 +78,8 @@ function exportStemsPlus()
 			// get the current channel
 			let channel = channels.getChannel(i)
 
-			// only rename if the 4th char is -
-			// to avoid any potential error
+			// only rename if the 4th char is
+			// - to avoid any potential error
 			if(channel.label[3] == "-")
 			{
 				let name = channel.label;
