@@ -82,6 +82,7 @@ function exportStemsPlus()
 			// - to avoid any potential error
 			if(channel.label[3] == "-")
 			{
+				// remove the first 4 chars
 				let name = channel.label;
 				channel.label = name.slice(4);
 			}
