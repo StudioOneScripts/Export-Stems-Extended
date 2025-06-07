@@ -5,7 +5,7 @@
 // temporarily adding numerical prefixes to channel names during stem
 // export, preserving the song’s channel order in the exported files. 
 // 
-// This also maintains correct track order when importing the files 
+// This also maintains the correct track order when importing stems 
 // into other audio workstations. The prefixes are automatically 
 // removed after the stem export, leaving the session unchanged.
 //
@@ -40,6 +40,7 @@ function exportStemsPlus()
 		Host.GUI.Commands.interpretCommand("Song","Export Stems")
 
 		// remove the channel prefixes
+		// after the export is done
 		this.removeChannelPrefixes();
 
 		return Host.Results.kResultOk;
@@ -61,9 +62,9 @@ function exportStemsPlus()
 				channel.channelType == "MusicTrack")
 				continue;
        
-			// prefix the channel name
+			// numerically prefix the channel name
 			let prefix = (i).toString().padStart(3, '0');
-			let newName = prefix + "-" + channel.label;
+			let newName = prefix + "-" + channel.label.trim();
 			channel.label = newName;
 		}
 	}
@@ -78,8 +79,8 @@ function exportStemsPlus()
 			// get the current channel
 			let channel = channels.getChannel(i)
 			
-			// rename the channel if the
-			// third character is a dash
+			// only split and remane if the fourth char
+			// is - to avoid any potential errors
 			if(channel.label[3] == "-")
 			{
 				let name = channel.label.split('-');
