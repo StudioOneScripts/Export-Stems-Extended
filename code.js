@@ -3,9 +3,10 @@
 //
 // This script adds a missing feature to PreSonus Studio One (c) by 
 // temporarily prefixing channel names during stem export, preserving
-// the song’s track order in the exported files. The prefixes maintain 
-// correct track order when importing into other DAWs as well, and are 
-// automatically removed after the export to leave the session unchanged.
+// the song’s channel order in the exported files. This also maintains 
+// correct track order when importing the files into other DAWs. The 
+// prefixes are automatically removed after the stem export to leave the 
+// session unchanged.
 //
 // Created by: Lawrence F.
 // ------------------------------------------------------------------
@@ -71,7 +72,7 @@ function exportStemsPlus()
 
 	this.removeChannelPrefixes = function ()
 	{
-		// iterate the channel listg
+		// iterate the channel list
 		for (i=0; i < channels.numChannels; i++ )
 		{
 			// get the current channel
@@ -88,7 +89,7 @@ function exportStemsPlus()
 	}
 }
 
-// ---------------------------------------------------------------------
+// ------------------------------------------
 
 function createInstance()
 {
