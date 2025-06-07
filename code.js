@@ -77,13 +77,13 @@ function exportStemsPlus()
 		{
 			// get the current channel
 			let channel = channels.getChannel(i)
-			
-			// only split and rename if the 4th char
-			// is - to avoid any potential errors
+
+			// only rename if the 4th char is -
+			// to avoid any potential error
 			if(channel.label[3] == "-")
 			{
-				let name = channel.label.split('-');
-				channel.label = name[name.length-1].trim();
+				let name = channel.label;
+				channel.label = name.slice(4);
 			}
 		}
 	}
