@@ -52,8 +52,8 @@ function exportStemsPlus()
 
 			if (channel.channelType == "MusicTrack")
 				continue;
-
-			let prefix = i.toString().padStart(3, '0');
+			
+			let prefix = (i+1).toString().padStart(3, '0');
 			channel.label = prefix + "-" + channel.label.trim();
 		}
 	}
