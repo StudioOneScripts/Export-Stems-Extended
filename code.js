@@ -15,7 +15,6 @@ function exportStemsPlus()
 {
 	this.interfaces = [Host.Interfaces.IEditTask]
 
-	// get the main channel list
 	let channels = Host.Objects.getObjectByUrl
 	("object://hostapp/Studio/ActiveEnvironment/MixerConsole")
 	.getChannelList(1)
