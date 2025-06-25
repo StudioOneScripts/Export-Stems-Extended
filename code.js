@@ -32,12 +32,14 @@ function exportStemsPlus()
 	this.performEdit = function (context)
 	{		
 		// prefix the mixer channel names
+		// before opening the dialog
 		this.prefixMixerChannels();
 
 		// open the Export Stems dialog
 		Host.GUI.Commands.interpretCommand("Song","Export Stems")
 
-		// remove the channel prefixes when the dialog closes
+		// remove the channel prefixes 
+		// when the dialog closes
 		this.removeChannelPrefixes();
 
 		return Host.Results.kResultOk;
@@ -47,17 +49,13 @@ function exportStemsPlus()
 
 	this.prefixMixerChannels = function ()
 	{
-		// iterate the channel list
 		for (i=0; i < channels.numChannels; i++ )
 		{
-			// get the current channel
 			let channel = channels.getChannel(i);
 
-			// ignore MusicTrack channels
 			if (channel.channelType == "MusicTrack")
 				continue;
-       
-			// numerically prefix the channel name
+
 			let prefix = i.toString().padStart(3, '0');
 			channel.label = prefix + "-" + channel.label.trim();
 		}
@@ -67,18 +65,15 @@ function exportStemsPlus()
 
 	this.removeChannelPrefixes = function ()
 	{
-		// iterate the channel list
 		for (i=0; i < channels.numChannels; i++ )
 		{
-			// get the current channel
 			let channel = channels.getChannel(i)
 
-			// ignore MusicTrack channels
 			if (channel.channelType == "MusicTrack")
 				continue;
 
 			// only rename if the 4th char is
-			// - to avoid any potential error
+			// - to avoid any possible error
 			if(channel.label[3] == "-")
 			{
 				// remove the first 4 chars
