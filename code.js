@@ -31,15 +31,13 @@ function exportStemsPlus()
 
 	this.performEdit = function (context)
 	{		
-		// prefix the mixer channel names
-		// before opening the dialog
+		// prefix the channel names
 		this.prefixMixerChannels();
 
-		// open the Export Stems dialog
+		// open the stems dialog
 		Host.GUI.Commands.interpretCommand("Song","Export Stems")
 
 		// remove the channel prefixes 
-		// when the dialog closes
 		this.removeChannelPrefixes();
 
 		return Host.Results.kResultOk;
