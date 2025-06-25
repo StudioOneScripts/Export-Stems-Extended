@@ -1,16 +1,14 @@
 ﻿// ------------------------------------------------------------------
 //                       EXPORT STEMS EXTENDED
 // ------------------------------------------------------------------
-// This script adds a missing feature to PreSonus Studio One (c) by 
-// temporarily adding numerical prefixes to channel names during stem
-// export, preserving the song’s channel order on the file system. 
+// This script temporarily adds numerical prefixes to channel names 
+// during stem export, preserving the song’s channel order on the 
+// computer file system. This also maintains the correct track order 
+// when importing stems into other audio workstations. 
 // 
-// This also maintains the correct track order when importing stems 
-// into other audio workstations. The prefixes are automatically 
-// removed after the stem export, leaving the session unchanged.
+// The prefixes are automatically removed after the stem export, 
+// leaving the session unchanged.
 //
-// Created by: Gray Wolf  
-// https://studiooneforum.com/threads/export-stems.947/
 // ------------------------------------------------------------------ 
 
 function exportStemsPlus()
@@ -32,15 +30,14 @@ function exportStemsPlus()
 	// --------------------------------------
 
 	this.performEdit = function (context)
-	{
+	{		
 		// prefix the mixer channel names
 		this.prefixMixerChannels();
 
-		// open the Export Stems dialog which will 
-		// also pause the script until it closes
+		// open the Export Stems dialog
 		Host.GUI.Commands.interpretCommand("Song","Export Stems")
 
-		// remove the channel prefixes
+		// remove the channel prefixes when the dialog closes
 		this.removeChannelPrefixes();
 
 		return Host.Results.kResultOk;
@@ -56,8 +53,7 @@ function exportStemsPlus()
 			// get the current channel
 			let channel = channels.getChannel(i);
 
-			// ignore the Chord Track and 
-			// any other MusicTrack channels
+			// ignore MusicTrack channels
 			if (channel.channelType == "MusicTrack")
 				continue;
        
@@ -76,6 +72,10 @@ function exportStemsPlus()
 		{
 			// get the current channel
 			let channel = channels.getChannel(i)
+
+			// ignore MusicTrack channels
+			if (channel.channelType == "MusicTrack")
+				continue;
 
 			// only rename if the 4th char is
 			// - to avoid any potential error
