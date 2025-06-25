@@ -1,0 +1,19 @@
+{
+    "folders": [
+        {
+            "path": "../Script Testing"
+        },
+        {
+            "path": "../Script Assistant"
+        },
+        {
+            "path": "../../Resources/Extracted Packages"
+        },
+        {
+            "path": "../Reset Mixer"
+        },
+        {
+            "path": "../../Hold/Functions"
+        }
+    ]
+}
