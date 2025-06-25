@@ -7,8 +7,5 @@ export, preserving the song’s channel order in the exported files.
  
 This also maintains correct track order when importing the files 
 into other workstations. The prefixes are automatically removed 
-after the stem export, leaving the session unchanged.
-
-## Installation
-Download the package and put it in the application \Scripts folder. The command will appear as "Export Stems+" in the "External" category in the key command list and in the main Track menu.   
+after the stem export, leaving the session unchanged. 
 
