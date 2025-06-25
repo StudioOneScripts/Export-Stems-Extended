@@ -63,8 +63,7 @@ function exportStemsPlus()
        
 			// numerically prefix the channel name
 			let prefix = i.toString().padStart(3, '0');
-			let newName = prefix + "-" + channel.label.trim();
-			channel.label = newName;
+			channel.label = prefix + "-" + channel.label.trim();
 		}
 	}
 
@@ -83,8 +82,7 @@ function exportStemsPlus()
 			if(channel.label[3] == "-")
 			{
 				// remove the first 4 chars
-				let name = channel.label;
-				channel.label = name.slice(4);
+				channel.label = channel.label.slice(4);
 			}
 		}
 	}
