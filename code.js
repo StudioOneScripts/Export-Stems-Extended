@@ -8,7 +8,10 @@
 // 
 // The prefixes are automatically removed after the stem export, 
 // leaving the session unchanged.
-//
+
+// The starting point may change based on the song content.  For example,
+// it may start at 002 instead of 001, but that's irrelevant to the
+// sequential order of the stems in the file system.
 // ------------------------------------------------------------------ 
 
 function exportStemsPlus()
